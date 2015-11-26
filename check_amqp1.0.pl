@@ -14,4 +14,42 @@ FIXME
 ),
 );
 
+$np->add_arg(
+  spec => 'hostname=s',
+  help => "--hostname\n   Hostname to connect to. (default: %s)",
+  default => 'localhost',
+);
+
+$np->add_arg(
+  spec => 'username=s',
+  help => "--username\n   Username to connect with. (default: %s)",
+  default => 'system',
+);
+
+$np->add_arg(
+  spec => 'password=s',
+  help => "--password\n   Password to connect with. (default: %s)",
+  default => 'manager',
+);
+
+$np->add_arg(
+  spec => 'ssl',
+  help => "--ssl\n   Use SSL when connecting. (default: %s)",
+  default => 0,
+);
+
+$np->add_arg(
+  spec => 'cafile=s',
+  help => "--cafile\n   CA to verify against when using SSL. (default: %s)",
+  default => "/etc/ssl/certs/ca-certificates.crt",
+);
+
+$np->add_arg(
+  spec => 'password=s',
+  help => "--password\n   Password to connect with. (default: %s)",
+  default => 'manager',
+);
+
 $np->getopts;
+
+print Dumper $np;
