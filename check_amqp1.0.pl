@@ -54,4 +54,15 @@ $np->getopts;
 
 # FIXME Test if we need to check for cafile or if Proton gives a good enough message if it's missing.
 
+my $default_port;
+for my $opt (@{$np->opts->{_args}}) {
+  $default_port = $opt->{default} if $opt->{name} eq "port";
+}
+
+# Change the port if not set and we're using SSL
+if ($np->opts->get('ssl') && $np->opts->get('port') eq $default_port) {
+  warn "Silently changing to SSL port since SSL is requested but the default SSL port number isn't used.\n" if $np->opts->{verbose};
+  $np->opts->{port} = 5671;
+}
+
 print Dumper $np;
