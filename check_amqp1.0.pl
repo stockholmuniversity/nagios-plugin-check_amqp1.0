@@ -52,4 +52,6 @@ $np->add_arg(
 
 $np->getopts;
 
+# FIXME Test if we need to check for cafile or if Proton gives a good enough message if it's missing.
+
 print Dumper $np;
