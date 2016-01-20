@@ -71,6 +71,6 @@ if ($np->opts->get('ssl') && $np->opts->get('port') eq $default_port) {
 my $fqdn = hostfqdn();
 my $protocol = "amqp".($np->opts->get('ssl') ? "s" : "");
 
-my $address = "$protocol://".$np->opts->get('username').":".$np->opts->get('password').'@'.$np->opts->get('hostname')."/nagios-test-queue-$fqdn";
+my $address = "$protocol://".$np->opts->get('username').":".$np->opts->get('password').'@'.$np->opts->get('hostname').":".$np->opts->get('port')."/nagios-test-queue-$fqdn";
 
 print Dumper $address;
