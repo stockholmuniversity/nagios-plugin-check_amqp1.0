@@ -73,4 +73,5 @@ my $protocol = "amqp".($np->opts->get('ssl') ? "s" : "");
 
 my $address = "$protocol://".$np->opts->get('username').":".$np->opts->get('password').'@'.$np->opts->get('hostname').":".$np->opts->get('port')."/nagios-test-queue-$fqdn";
 
-print Dumper $address;
+my $messenger = new qpid::proton::Messenger();
+my $msg  = new qpid::proton::Message();
