@@ -4,6 +4,7 @@ use warnings;
 use Nagios::Plugin;
 use Data::Dumper;
 use Net::Domain qw(hostfqdn);
+use qpid_proton;
 
 my $np = Nagios::Plugin->new(
   shortname => "#",
