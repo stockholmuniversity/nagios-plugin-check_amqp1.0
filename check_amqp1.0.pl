@@ -67,7 +67,7 @@ if ($np->opts->get('ssl') && $np->opts->get('port') eq $default_port) {
   $np->opts->{port} = 5671;
 }
 
-# Build the adress
+# Build the address
 my $fqdn = hostfqdn();
 my $protocol = "amqp".($np->opts->get('ssl') ? "s" : "");
 
@@ -75,4 +75,4 @@ my $address = "$protocol://".$np->opts->get('username').":".$np->opts->get('pass
 
 my $messenger = new qpid::proton::Messenger();
 $messenger->set_incoming_window(1);
-my $msg  = new qpid::proton::Message();
+my $msg = new qpid::proton::Message();
