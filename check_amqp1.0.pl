@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use Nagios::Plugin;
 use Data::Dumper;
+use Net::Domain qw(hostfqdn);
 
 my $np = Nagios::Plugin->new(
   shortname => "#",
@@ -65,4 +66,5 @@ if ($np->opts->get('ssl') && $np->opts->get('port') eq $default_port) {
   $np->opts->{port} = 5671;
 }
 
-print Dumper $np;
+# Build the adress
+my $fqdn = hostfqdn();
