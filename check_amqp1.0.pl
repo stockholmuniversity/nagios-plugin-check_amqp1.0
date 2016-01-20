@@ -69,3 +69,4 @@ if ($np->opts->get('ssl') && $np->opts->get('port') eq $default_port) {
 
 # Build the adress
 my $fqdn = hostfqdn();
+my $protocol = "amqp".($np->opts->get('ssl') ? "s" : "");
