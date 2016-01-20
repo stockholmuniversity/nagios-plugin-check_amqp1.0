@@ -21,6 +21,12 @@ $np->add_arg(
 );
 
 $np->add_arg(
+  spec => 'port=s',
+  help => "--port\n   port to connect with. (default: %s)",
+  default => 5672,
+);
+
+$np->add_arg(
   spec => 'username=s',
   help => "--username\n   Username to connect with. (default: %s)",
   default => 'system',
@@ -42,12 +48,6 @@ $np->add_arg(
   spec => 'cafile=s',
   help => "--cafile\n   CA to verify against when using SSL. (default: %s)",
   default => "/etc/ssl/certs/ca-certificates.crt",
-);
-
-$np->add_arg(
-  spec => 'password=s',
-  help => "--password\n   Password to connect with. (default: %s)",
-  default => 'manager',
 );
 
 $np->getopts;
