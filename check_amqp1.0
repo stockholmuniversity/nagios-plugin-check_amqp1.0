@@ -48,7 +48,11 @@ np.parse_arguments()
 
 # Change the port if not set and we're using SSL
 if np.options.ssl and not np.options.port:
+  # FIXME Add INFO that we are changing the port if verbose
   np.options.port = 5671
+
+# FIXME Check if we need to check if cafile exists or if proton takes care of
+# that for us.
 
 try:
   if True:
