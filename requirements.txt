@@ -1,0 +1,2 @@
+python-qpid-proton>=0.11.1
+pynag>=0.9.1
