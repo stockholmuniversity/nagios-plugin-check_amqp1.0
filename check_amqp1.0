@@ -36,7 +36,7 @@ np = PluginHelper()
 
 ## Command line arguments
 np.parser.add_option("-H", "--hostname",
-    help="Hostname to connect to",
+    help="Hostname to connect to (default: %default)",
     default="localhost",
     )
 np.parser.add_option("-P", "--port",
@@ -44,20 +44,20 @@ np.parser.add_option("-P", "--port",
     type="int",
     )
 np.parser.add_option("-u", "--username",
-    help="Username to connect with",
+    help="Username to connect with (default: %default)",
     default="system",
     )
 np.parser.add_option("-p", "--password",
-    help="Password to connect with",
+    help="Password to connect with (default: %default)",
     default="manager",
     )
 np.parser.add_option("-s", "--ssl",
-    help="Use SSL when connecting",
+    help="Use SSL when connecting (default: %default)",
     default=False,
     action="store_true",
     )
 np.parser.add_option("-c", "--cafile",
-    help="CA to verify against when using SSL",
+    help="CA to verify against when using SSL (default: %default)",
     default="/etc/ssl/certs/ca-certificates.crt",
     )
 
