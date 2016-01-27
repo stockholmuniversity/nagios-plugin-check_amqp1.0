@@ -45,9 +45,11 @@ np.parser.add_option("-P", "--port",
     )
 np.parser.add_option("-u", "--username",
     help="Username to connect with",
+    default="system",
     )
 np.parser.add_option("-p", "--password",
     help="Password to connect with",
+    default="manager",
     )
 np.parser.add_option("-s", "--ssl",
     help="Use SSL when connecting",
