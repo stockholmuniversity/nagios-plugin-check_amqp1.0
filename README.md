@@ -6,6 +6,9 @@ SSL/TLS connections as well.
 
 ## Installation
 
+Depending on your distro you might need to install the `python-pip` and
+`python-dev` packages.
+
 ```sh
 $ pip install -r requirements.txt
 ```
