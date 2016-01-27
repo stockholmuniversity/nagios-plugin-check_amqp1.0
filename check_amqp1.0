@@ -37,6 +37,7 @@ np = PluginHelper()
 ## Command line arguments
 np.parser.add_option("-H", "--hostname",
     help="Hostname to connect to",
+    default="localhost",
     )
 np.parser.add_option("-P", "--port",
     help="Port to connect with",
