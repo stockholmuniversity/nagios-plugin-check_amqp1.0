@@ -58,6 +58,7 @@ np.parser.add_option("-s", "--ssl",
     )
 np.parser.add_option("-c", "--cafile",
     help="CA to verify against when using SSL",
+    default="/etc/ssl/certs/ca-certificates.crt",
     )
 
 np.parse_arguments()
