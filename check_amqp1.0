@@ -35,12 +35,27 @@ from pynag.Plugins import PluginHelper,ok,warning,critical,unknown
 np = PluginHelper()
 
 ## Command line arguments
-np.parser.add_option("-H","--hostname", help="Hostname to connect to")
-np.parser.add_option("-P","--port", help="Port to connect with", type="int")
-np.parser.add_option("-u","--username", help="Username to connect with")
-np.parser.add_option("-p","--password", help="Password to connect with")
-np.parser.add_option("-s","--ssl", help="Use SSL when connecting", default=False, action="store_true")
-np.parser.add_option("-c","--cafile", help="CA to verify against when using SSL")
+np.parser.add_option("-H", "--hostname",
+    help="Hostname to connect to",
+    )
+np.parser.add_option("-P", "--port",
+    help="Port to connect with",
+    type="int",
+    )
+np.parser.add_option("-u", "--username",
+    help="Username to connect with",
+    )
+np.parser.add_option("-p", "--password",
+    help="Password to connect with",
+    )
+np.parser.add_option("-s", "--ssl",
+    help="Use SSL when connecting",
+    default=False,
+    action="store_true",
+    )
+np.parser.add_option("-c", "--cafile",
+    help="CA to verify against when using SSL",
+    )
 
 np.parse_arguments()
 
