@@ -30,6 +30,9 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 from pynag.Plugins import PluginHelper,ok,warning,critical,unknown
+from proton import Message, SSLDomain, Url
+from proton.utils import BlockingConnection
+import time
 
 ## Create the plugin option
 np = PluginHelper()
