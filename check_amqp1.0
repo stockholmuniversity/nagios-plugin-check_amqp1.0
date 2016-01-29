@@ -94,6 +94,10 @@ try:
   # FIXME Add the correct queue/topic
   url.path = "it/test/fax"
 
+  conn = BlockingConnection(url=url)
+  receiver = conn.create_receiver(url.path)
+  sender = conn.create_sender(url.path)
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
