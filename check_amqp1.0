@@ -98,6 +98,13 @@ try:
   receiver = conn.create_receiver(url.path)
   sender = conn.create_sender(url.path)
 
+  sent_msg = Message(
+    body="Hello World!",
+    # Test the durable/persistent storage
+    durable=True,
+    creation_time=int(time.time()),
+  )
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
