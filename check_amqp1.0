@@ -103,7 +103,7 @@ try:
   url.scheme = "amqp%s" % ("s" if np.options.ssl else "")
   url.path = "aliveness-test"
 
-  log.debug("Connecting to '%r'" (url))
+  log.debug("Connecting to '%r'" % (url))
   conn = BlockingConnection(url=url)
   log.debug("Creating consumer")
   receiver = conn.create_receiver(url.path)
