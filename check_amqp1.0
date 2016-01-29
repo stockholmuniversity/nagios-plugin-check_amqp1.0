@@ -107,6 +107,10 @@ try:
 
   sender.send(sent_msg)
 
+  recv_msg = receiver.receive(timeout=np.options.timeout)
+  receiver.accept()
+  conn.close()
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
