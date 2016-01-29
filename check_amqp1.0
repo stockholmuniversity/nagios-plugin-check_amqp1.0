@@ -32,6 +32,7 @@
 from proton import Message, SSLDomain, Url
 from proton.utils import BlockingConnection
 from pynag.Plugins import PluginHelper,ok,warning,critical,unknown
+import os.path
 import time
 
 ## Create the plugin option
@@ -73,8 +74,9 @@ if np.options.ssl and not np.options.port:
   # FIXME Add INFO that we are changing the port if verbose
   np.options.port = 5671
 
-# FIXME Check if we need to check if cafile exists or if proton takes care of
-# that for us.
+# Ensure we have a CAfile if SSL is enabled (and that it exists)
+if np.options.ssl and (not np.options.cafile or not os.path.isfile(np.options.cafile)):
+  np.exit(exit_code=critical, summary="SSL is enabled but option 'cafile' wasn't set or it doesn't exist (%s)" % (np.options.cafile))
 
 try:
   if True:
