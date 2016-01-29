@@ -72,6 +72,10 @@ np.parser.add_option("-c", "--cafile",
 
 np.parse_arguments()
 
+# Set loglevel based on verbose
+if np.options.verbose:
+  log.setLevel(logging.DEBUG)
+
 # Santiy checks
 
 # Change the port if not set and we're using SSL
