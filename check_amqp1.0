@@ -82,6 +82,8 @@ try:
   # Set SSL settings
   ssl_domain = SSLDomain(SSLDomain.MODE_CLIENT)
   ssl_domain.set_trusted_ca_db(np.options.cafile)
+  # FIXME Make this configurable. VERIFY_PEER_NAME is useful
+  ssl_domain.set_peer_authentication(SSLDomain.VERIFY_PEER)
 
   if True:
     np.add_status(ok)
