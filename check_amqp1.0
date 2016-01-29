@@ -91,15 +91,14 @@ try:
   url.username = np.options.username
   url.password = np.options.password
   url.scheme = "amqp%s" % ("s" if np.options.ssl else "")
-  # FIXME Add the correct queue/topic
-  url.path = "it/test/fax"
+  url.path = "aliveness-test"
 
   conn = BlockingConnection(url=url)
   receiver = conn.create_receiver(url.path)
   sender = conn.create_sender(url.path)
 
   sent_msg = Message(
-    body="Hello World!",
+    body="Faxa mig goda kakor.",
     # Test the durable/persistent storage
     durable=True,
     creation_time=int(time.time()),
