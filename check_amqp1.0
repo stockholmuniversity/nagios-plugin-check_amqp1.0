@@ -72,8 +72,8 @@ np.parser.add_option("-c", "--cafile",
 
 np.parse_arguments()
 
-# Set loglevel based on verbose
-if np.options.verbose:
+# Set loglevel to debug if options verbose or debug are given
+if np.options.verbose or np.options.debug:
   log.setLevel(logging.DEBUG)
 
 # Santiy checks
