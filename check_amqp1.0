@@ -32,11 +32,16 @@
 from proton import Message, SSLDomain, Url
 from proton.utils import BlockingConnection
 from pynag.Plugins import PluginHelper,ok,warning,critical,unknown
+import logging
 import os.path
 import time
 
 ## Create the plugin option
 np = PluginHelper()
+
+# Configure logging
+logging.basicConfig()
+log = logging.getLogger(os.path.basename(__file__))
 
 ## Command line arguments
 np.parser.add_option("-H", "--hostname",
