@@ -6,8 +6,14 @@ SSL/TLS connections as well.
 
 ## Installation
 
-Depending on your distro you might need to install the `python-pip` and
-`python-dev` packages.
+Depending on your distro and usecase you might need to install any or all of
+these:
+* `libsasl2-dev`
+* `libssl-dev`
+* `pkg-config`
+* `python-dev`
+* `python-pip`
+* `swig`
 
 ```sh
 $ pip install -r requirements.txt
