@@ -81,6 +81,7 @@ if np.options.verbose:
 # Change the port if not set and we're using SSL
 if np.options.ssl and not np.options.port:
   # FIXME Add INFO that we are changing the port if verbose
+  log.debug("Silently changing to SSL port since SSL is requested but the default SSL port number isn't used.")
   np.options.port = 5671
 
 # Ensure we have a CAfile if SSL is enabled (and that it exists)
