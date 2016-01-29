@@ -116,7 +116,7 @@ try:
     np.add_summary("Received message %r" % (recv_msg))
 
 except Exception, e:
-  np.add_summary('ERROR: %s: %r' % (e.__class__.__name__, e))
   np.add_status(critical)
+  np.add_summary('ERROR: %s: %r' % (e.__class__.__name__, e))
 
 np.exit()
