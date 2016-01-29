@@ -79,6 +79,10 @@ if np.options.ssl and (not np.options.cafile or not os.path.isfile(np.options.ca
   np.exit(exit_code=critical, summary="SSL is enabled but option 'cafile' wasn't set or it doesn't exist (%s)" % (np.options.cafile))
 
 try:
+  # Set SSL settings
+  ssl_domain = SSLDomain(SSLDomain.MODE_CLIENT)
+  ssl_domain.set_trusted_ca_db(np.options.cafile)
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
