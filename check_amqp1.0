@@ -85,6 +85,15 @@ try:
   # FIXME Make this configurable. VERIFY_PEER_NAME is useful
   ssl_domain.set_peer_authentication(SSLDomain.VERIFY_PEER)
 
+  url = Url()
+  url.host = np.options.host
+  url.port = np.options.port
+  url.username = np.options.username
+  url.password = np.options.password
+  url.scheme = "amqp%s" % ("s" if np.options.ssl else "")
+  # FIXME Add the correct queue/topic
+  url.path = "it/test/fax"
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
