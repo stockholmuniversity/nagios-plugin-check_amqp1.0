@@ -105,6 +105,8 @@ try:
     creation_time=int(time.time()),
   )
 
+  sender.send(sent_msg)
+
   if True:
     np.add_status(ok)
     np.add_summary("Received message %r" % ("meow"))
