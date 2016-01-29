@@ -86,7 +86,7 @@ try:
   ssl_domain.set_peer_authentication(SSLDomain.VERIFY_PEER)
 
   url = Url()
-  url.host = np.options.host
+  url.host = np.options.hostname
   url.port = np.options.port
   url.username = np.options.username
   url.password = np.options.password
