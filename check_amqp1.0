@@ -111,12 +111,10 @@ try:
   receiver.accept()
   conn.close()
 
-  if True:
+  if recv_msg:
     np.add_status(ok)
-    np.add_summary("Received message %r" % ("meow"))
-  else:
-    np.add_status(critical)
-    np.add_summary("Got no message! %r" % ("ohnoes"))
+    np.add_summary("Received message %r" % (recv_msg))
+
 except Exception, e:
   np.add_summary('ERROR: %s: %r' % (e.__class__.__name__, e))
   np.add_status(critical)
