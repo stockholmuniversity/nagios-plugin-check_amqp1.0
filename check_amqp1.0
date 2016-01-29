@@ -103,8 +103,11 @@ try:
   url.scheme = "amqp%s" % ("s" if np.options.ssl else "")
   url.path = "aliveness-test"
 
+  log.debug("Connecting to '%r'" (url))
   conn = BlockingConnection(url=url)
+  log.debug("Creating consumer")
   receiver = conn.create_receiver(url.path)
+  log.debug("Creating producer")
   sender = conn.create_sender(url.path)
 
   sent_msg = Message(
@@ -113,10 +116,13 @@ try:
     durable=True,
     creation_time=int(time.time()),
   )
+  log.debug("Created message: %r" % (sent_msg))
 
+  log.debug("Sending message")
   sender.send(sent_msg)
 
   recv_msg = receiver.receive(timeout=np.options.timeout)
+  log.debug("Received message: %r" % (recv_msg))
   receiver.accept()
   conn.close()
 
