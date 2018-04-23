@@ -115,6 +115,7 @@ try:
     # Test the durable/persistent storage
     durable=True,
     creation_time=int(time.time()),
+    ttl=60,
   )
   log.debug("Created message: %r" % (sent_msg))
 
