@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # vim: set fileencoding=utf-8
 '''
 Nagios NRPE check for checking the AMQP 1.0 connection to a server (like check aliveness does)
@@ -10,7 +10,7 @@ Licensed under the Revised BSD License.
 import sys
 from setuptools import setup, find_packages
 
-version = "1.1.0"
+version = "1.2.0"
 
 setup(
     name="check_amqp1.0",

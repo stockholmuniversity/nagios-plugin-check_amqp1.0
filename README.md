@@ -11,10 +11,10 @@ these:
 * `libsasl2-dev`
 * `libssl-dev`
 * `pkg-config`
-* `python-dev`
-* `python-pip`
+* `python3-dev`
+* `python3-pip`
 * `swig`
 
 ```sh
-$ pip install .
+$ pip3 install .
 ```
