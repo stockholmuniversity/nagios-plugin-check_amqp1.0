@@ -133,7 +133,7 @@ try:
     np.add_status(ok)
     np.add_summary("Received message %r" % (recv_msg))
 
-except Exception, e:
+except Exception as e:
   np.add_status(critical)
   np.add_summary('%s: %r' % (e.__class__.__name__, e))
 
