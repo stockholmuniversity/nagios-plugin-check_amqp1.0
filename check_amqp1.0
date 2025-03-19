@@ -99,7 +99,7 @@ try:
   url.host = np.options.hostname
   url.port = np.options.port
   url.username = np.options.username
-  url.scheme = "amqp%s" % ("s" if np.options.ssl else "")
+  url.scheme = "amqp" + ("s" if np.options.ssl else "")
   url.path = "aliveness-test"
 
   log.debug("Connecting to '%r'" % (url))
