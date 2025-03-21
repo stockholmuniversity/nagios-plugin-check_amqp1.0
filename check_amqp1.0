@@ -99,13 +99,13 @@ try:
   url.host = np.options.hostname
   url.port = np.options.port
   url.username = np.options.username
-  url.password = np.options.password
   url.scheme = "amqp" + ("s" if np.options.ssl else "")
   url.path = "aliveness-test"
 
   log.debug("Connecting to '%r'" % (url))
   conn = BlockingConnection(
     url=url,
+    password = np.options.password,
     ssl_domain=ssl_domain if np.options.ssl else None
   )
   log.debug("Creating consumer")
